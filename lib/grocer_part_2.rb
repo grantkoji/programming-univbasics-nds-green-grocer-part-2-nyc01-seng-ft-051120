@@ -31,11 +31,15 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  consolidated_cart = consolidate_cart(cart)
-  applied_coupons_cart = apply_coupons(consolidated_cart, coupons)
-  applied_clearance_cart = apply_clearance(applied_coupons_cart)
+  checkout_cart = consolidate_cart(cart)
+  if coupons
+    checkout_cart = apply_coupons(checkout_cart, coupons)
+  end
+  if checkout_cart.any? {|info| info[:clearance] == true}
+    checkout_cart = apply_clearance(checkout_cart)
+  end
   total_Price = 0
-  applied_clearance_cart.each do |info|
+  checkout_cart.each do |info|
     total_Price = info[:price] * info[:count]
   end
   if total_Price > 100
