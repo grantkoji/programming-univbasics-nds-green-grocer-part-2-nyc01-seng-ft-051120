@@ -32,7 +32,7 @@ end
 
 def checkout(cart, coupons)
   checkout_cart = consolidate_cart(cart)
-  if coupons
+  if coupons.length > 0
     checkout_cart = apply_coupons(checkout_cart, coupons)
   end
   if checkout_cart.any? {|info| info[:clearance] == true}
