@@ -36,6 +36,8 @@ def checkout(cart, coupons)
     checkout_cart = apply_coupons(checkout_cart, coupons)
   end
   if checkout_cart.any? {|info| info[:clearance] == true}
+    temp_cart = checkout_cart
+    if info[:item] = coupons[:item]
 
     checkout_cart = apply_clearance(checkout_cart)
   end
