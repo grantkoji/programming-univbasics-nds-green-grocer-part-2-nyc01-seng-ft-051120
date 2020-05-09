@@ -32,15 +32,15 @@ end
 def checkout(cart, coupons)
   binding.pry
   checkout_cart = consolidate_cart(cart)
-  if coupons.length > 0
+  #if coupons.length > 0
     checkout_cart = apply_coupons(checkout_cart, coupons)
-  end
-  if checkout_cart.any? {|info| info[:clearance] == true}
-    temp_cart = checkout_cart
-    if info[:item] = coupons[:item]
+  #end
+  #if checkout_cart.any? {|info| info[:clearance] == true}
+  #  temp_cart = checkout_cart
+  #  if info[:item] = coupons[:item]
 
     checkout_cart = apply_clearance(checkout_cart)
-  end
+  #end
   total_Price = 0
   checkout_cart.each do |info|
     total_Price = info[:price] * info[:count]
