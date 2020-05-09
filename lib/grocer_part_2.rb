@@ -6,11 +6,11 @@ require 'pry'
 def apply_coupons(cart, coupons)
     consolidated_cart = cart
     coupons.each do |coupon_info|
+      binding.pry
     coupon_price = coupon_info[:cost] / coupon_info[:num]
     coupon_name = "#{coupon_info[:item]} W/ COUPON"
     coupon_count = coupon_info[:num]
     consolidated_cart.each do |consolidated_cart_info|
-      binding.pry
       consolidated_count = consolidated_cart_info[:count|
         if coupon_info[:item] == consolidated_cart_info[:item]
           if consolidated_count - coupon_count == 0
