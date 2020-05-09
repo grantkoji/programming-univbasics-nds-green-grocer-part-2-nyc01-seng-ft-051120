@@ -30,7 +30,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  binding.pry
   checkout_cart = consolidate_cart(cart)
   #if coupons.length > 0
     checkout_cart = apply_coupons(checkout_cart, coupons)
