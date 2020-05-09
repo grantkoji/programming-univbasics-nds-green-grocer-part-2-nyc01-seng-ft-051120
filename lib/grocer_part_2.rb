@@ -39,7 +39,7 @@ def checkout(cart, coupons)
     total_Price = info[:price] * info[:count]
   end
   if total_Price > 100
-    total_Price *= .9
+    total_Price = (total_Price * 9 / 10).round(2)
   end
   total_Price
 end
