@@ -34,7 +34,7 @@ def checkout(cart, coupons)
   binding.pry
   checkout_cart = consolidate_cart(cart)
   if coupons.length > 0
-    checkout_cart = apply_coupons(checkout_cart, coupons)
+    checkout_cart = apply_coupons(cart, coupons)
   end
   if checkout_cart.any? {|info| info[:clearance] == true}
     temp_cart = checkout_cart
