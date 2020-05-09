@@ -2,13 +2,10 @@ require_relative './part_1_solution.rb'
 require 'pry'
 
 def apply_coupons(cart, coupons)
-  i = 0
   coupons.each do |coupon|
     item_with_coupon = find_item_by_name_in_collection(coupon[:item], cart)
     item_is_in_basket = !!item_with_coupon
     count_is_big_enough_to_apply = item_is_in_basket && item_with_coupon[:count] >= coupon[:num]
-
-    binding.pry
     if item_is_in_basket and count_is_big_enough_to_apply
       cart << { item: "#{item_with_coupon[:item]} W/COUPON",
                 price: coupon[:cost] / coupon[:num],
@@ -17,7 +14,6 @@ def apply_coupons(cart, coupons)
               }
       item_with_coupon[:count] -= coupon[:num]
     end
-    i += 1
   end
   cart
 end
