@@ -24,12 +24,11 @@ end
 def apply_clearance(cart)
   cart.map do |cart_info|
     if cart_info[:clearance]
-      cart_info[:price] = (cart_info[price] * .8).round(2)
+      cart_info[:price] = ((cart_info[price] * 4) / 5).round(2)
     end
   end
 
   cart
-  # REMEMBER: This method **should** update cart
 
 end
 
