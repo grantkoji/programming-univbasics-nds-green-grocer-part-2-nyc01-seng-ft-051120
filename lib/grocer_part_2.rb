@@ -10,8 +10,8 @@ def apply_coupons(cart, coupons)
 
     binding.pry
     if item_is_in_basket and count_is_big_enough_to_apply
-      cart << { item: "#{item_with_coupon[:item]} W/COUPON", 
-                price: coupon[:cost] / coupon[:num], 
+      cart << { item: "#{item_with_coupon[:item]} W/COUPON",
+                price: coupon[:cost] / coupon[:num],
                 clearance: item_with_coupon[:clearance],
                 count: coupon[:num]
               }
@@ -21,7 +21,7 @@ def apply_coupons(cart, coupons)
   end
   cart
 end
-      
+
 
 
 #def apply_coupons(cart, coupons)
