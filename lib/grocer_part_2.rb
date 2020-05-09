@@ -36,6 +36,7 @@ def checkout(cart, coupons)
     checkout_cart = apply_coupons(checkout_cart, coupons)
   end
   if checkout_cart.any? {|info| info[:clearance] == true}
+    binding.pry
     checkout_cart = apply_clearance(checkout_cart)
   end
   total_Price = 0
