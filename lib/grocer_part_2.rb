@@ -38,7 +38,7 @@ def checkout(cart, coupons)
   applied_clearance_cart.each do |info|
     total_Price = info[:price] * info[:count]
   end
-  if total _Price > 100
+  if total_Price > 100
     total_Price *= .9
   end
   total_Price
