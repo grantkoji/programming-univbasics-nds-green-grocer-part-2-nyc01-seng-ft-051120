@@ -10,6 +10,7 @@ def apply_coupons(cart, coupons)
     coupon_name = "#{coupon_info[:item]} W/ COUPON"
     coupon_count = coupon_info[:num]
     consolidated_cart.each do |consolidated_cart_info|
+      binding.pry
       consolidated_count = consolidated_cart_info[:count|
         if coupon_info[:item] == consolidated_cart_info[:item]
           if consolidated_count - coupon_count == 0
@@ -35,8 +36,8 @@ def apply_coupons(cart, coupons)
                                  }
           end
         end
-
-  
+      end
+  end
   consolidated_cart
 end
 
