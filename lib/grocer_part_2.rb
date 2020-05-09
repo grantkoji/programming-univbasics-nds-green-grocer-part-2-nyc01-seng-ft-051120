@@ -15,6 +15,7 @@ def apply_coupons(cart, coupons)
       item_with_coupon[:count] -= coupon[:num]
     end
   end
+  binding.pry
   cart
 end
 
